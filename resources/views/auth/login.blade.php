@@ -27,7 +27,7 @@
           Login
       </button>
 
-      <a class="text-blue-700 hover:underline" href="{{route('register')}}">No account yet? Register here</a>
-      
+      <a class="text-blue-700 hover:underline" href="{{route('partnerUser')}}">No account yet? Register here</a>
+
   </div>
 @endsection

@@ -14,7 +14,7 @@
     </div>
     <div>
         <a href="{{route('login')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Login</button></a>
-        <a href="{{route('register')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Register</button></a>
+        <a href="{{route('partnerUser')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Register</button></a>
         {{-- <a href="{{route('logout')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Logout</button></a> --}}
         {{-- <a href="{{route('refer')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Your Refferal Code</button></a> --}}
     </div>
@@ -34,7 +34,7 @@
         </nav>
     @endauth
     @guest()
-    
+
     <nav id="menuBar" class="flex w-0 opacity-0 bg-black text-white h-screen">
         <ul class="transition ease-in-out duration-500 hover:bg-gray-400 w-full text-center">
             <li class="py-2">
@@ -44,7 +44,7 @@
     </nav>
 
     @endguest
-    <body>        
+    <body>
         @yield('content')
     </body>
 </div>
