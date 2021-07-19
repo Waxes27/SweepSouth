@@ -21,16 +21,29 @@
 </div>
 
 <div class="flex">
+    @auth()
+        <nav id="menuBar" class="flex w-0 opacity-0 bg-black text-white h-screen">
+            <ul class="transition ease-in-out duration-500 hover:bg-gray-400 w-full text-center">
+                <li class="py-2">
+                    <a href=" {{route('services')}} "><button class="p-4 w-full transition ease-in-out duration-500 hover:bg-red-400" >Order In</button></a>
+                </li>
+                <li class="py-2">
+                    <a href="{{route('services')}}"><button class="p-4 w-full transition ease-in-out duration-500 hover:bg-red-400" >Partner with us</button></a>
+                </li>
+            </ul>
+        </nav>
+    @endauth
+    @guest()
+    
     <nav id="menuBar" class="flex w-0 opacity-0 bg-black text-white h-screen">
         <ul class="transition ease-in-out duration-500 hover:bg-gray-400 w-full text-center">
             <li class="py-2">
-                <a href=" {{route('services')}} "><button class="p-4 w-full transition ease-in-out duration-500 hover:bg-red-400" >Order In</button></a>
-            </li>
-            <li class="py-2">
-                <a href="{{route('services')}}"><button class="p-4 w-full transition ease-in-out duration-500 hover:bg-red-400" >Partner with us</button></a>
+                <a href=" {{route('login')}} "><button class="p-4 w-full transition ease-in-out duration-500 hover:bg-red-400" >Please login to view menu</button></a>
             </li>
         </ul>
     </nav>
+
+    @endguest
     <body>        
         @yield('content')
     </body>
