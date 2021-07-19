@@ -15,6 +15,12 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
+
+    public function partner()
+    {
+        return view('auth.partner');
+    }
+
     public function employeeStore(Request $request)
     {
         // dd(Hash::make($request->id_number));
@@ -25,7 +31,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
         dd('Register Attempt');
-        
+
     }
 
     public function userStore(Request $request)
@@ -38,6 +44,6 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
         dd('Register Attempt');
-        
+
     }
 }

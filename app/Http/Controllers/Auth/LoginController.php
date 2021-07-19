@@ -12,6 +12,9 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
+
+
+
     public function userLogin()
     {
         dd('login Attempt');
