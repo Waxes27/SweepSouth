@@ -27,4 +27,17 @@ class RegisterController extends Controller
         dd('Register Attempt');
         
     }
+
+    public function userStore(Request $request)
+    {
+        // dd(Hash::make($request->id_number));
+        User::create([
+            // 'id_number' => Hash::make($request->id_number),
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        dd('Register Attempt');
+        
+    }
 }
