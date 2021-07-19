@@ -18,7 +18,7 @@ class CreateEmployee extends Migration
             $table->string('first_name');
             $table->string('id_number');
             $table->string('email');
-            $table->string('surname');
+            $table->string('surname')->nullable();
             $table->string('password');
             $table->timestamps();
         });
