@@ -10,6 +10,7 @@
         Time to Login
     </h1>
     <form class="container justify-center w-full">
+      @csrf
       <div class="mb-4">
         {{-- <label class="block text-center text-gray-700 text-sm font-bold mb-2" for="username">
           Username
