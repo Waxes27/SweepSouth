@@ -8,7 +8,7 @@
     {{-- <div class="container w-full my-auto mx-auto"> --}}
         <div class="bg-blue-300 w-1/3">
             <a  href="{{ route('partner') }}">
-                <button class="w-full h-full">Partner</button>
+                <button class="text-white text-3xl hover:bg-blue-500 hover:text-5xl w-full h-full">Partner</button>
             </a>
         </div>
         <div class="w-1/3">
@@ -16,7 +16,7 @@
         </div>
         <div class="bg-blue-300 w-1/3">
             <a href="{{ route('register') }}">
-                <button class="w-full h-full">Client</button>
+                <button class="text-white text-3xl hover:bg-blue-500 w-full h-full">Client</button>
             </a>
         </div>
         {{-- <div class="flex justify-between">
