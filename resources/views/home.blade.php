@@ -3,3 +3,4 @@
 @section('title')
     Home
 @endsection
+

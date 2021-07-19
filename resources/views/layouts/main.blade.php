@@ -31,8 +31,9 @@
             </li>
         </ul>
     </nav>
-
-    @yield('content')
+    <body>        
+        @yield('content')
+    </body>
 </div>
 <script src="{{ asset('js/main.js') }}"></script>
 </html>
