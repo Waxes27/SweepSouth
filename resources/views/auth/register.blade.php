@@ -9,7 +9,7 @@
     <h1 class="text-center text-3xl p-4 text-blue-400">
         Time to Register
     </h1>
-    <form class="container justify-center w-full">
+    <form method="POST" action="" class="container justify-center w-full">
       
         
         <div class="mb-4">
