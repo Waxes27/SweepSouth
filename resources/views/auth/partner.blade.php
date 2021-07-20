@@ -49,6 +49,13 @@
         <input class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" name="password">
       </div>
 
+      <div class="mb-4">
+        {{-- <label class="block text-center text-gray-700 text-sm font-bold mb-2" for="username">
+          Password
+        </label> --}}
+        <input class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password_confirmation" type="password" placeholder="Password again" name="password_confirmation">
+      </div>
+
 
       <button type="submit" class="mb-6 bg-blue-400 rounded hover:text-white p-3 w-full">
           Partner

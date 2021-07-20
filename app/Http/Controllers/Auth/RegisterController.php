@@ -23,19 +23,38 @@ class RegisterController extends Controller
 
     public function employeeStore(Request $request)
     {
-        // dd(Hash::make($request->id_number));
+        // dd($request);
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'id_number' => 'required|max:12',
+            'email' => 'required|email|max:255',
+            'password' => 'required|confirmed',
+            'username' => 'required|max:255'
+        ]);
+
         Employee::create([
             'id_number' => Hash::make($request->id_number),
             'first_name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        dd('Register Attempt');
+        if (auth()->attempt($request->only('email', 'password'))){
+            return redirect()->route('services');
+        }
+        else{
+            dd("failed");
+        }
+
 
     }
 
     public function userStore(Request $request)
     {
+        $this->validate($request, [
+            'username' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|confirmed',
+        ]);
         // dd(Hash::make($request->id_number));
         User::create([
             // 'id_number' => Hash::make($request->id_number),

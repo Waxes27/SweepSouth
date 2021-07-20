@@ -19,18 +19,5 @@
                 <button class="text-white text-3xl hover:bg-blue-500 w-full h-full">Client</button>
             </a>
         </div>
-        {{-- <div class="flex justify-between">
-            <div class="p-40 rounded-lg bg-blue-200  hover:bg-blue-400">
-                <a href="{{ route('partner') }}">
-                    <button>Partner</button>
-                </a>
-            </div>
 
-            <div class="p-40 rounded-lg bg-blue-200  hover:bg-blue-400">
-                <a href="{{ route('register') }}">
-                    <button >Client</button>
-                </a>
-            </div>
-        </div> --}}
-    {{-- </div> --}}
 @endsection
