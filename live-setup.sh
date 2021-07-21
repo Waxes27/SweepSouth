@@ -4,4 +4,4 @@ chmod -R 777 database/ app/ resources/ public/ routes/ storage/ vendor/
 php artisan key:generate
 mv * ..
 cd ..
-rm $1
+rm -rf SweepSouth
