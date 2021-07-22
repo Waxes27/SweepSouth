@@ -13,7 +13,11 @@ class LoginController extends Controller
     }
 
 
-
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->route('home');
+    }
 
     public function userLogin()
     {

@@ -18,8 +18,9 @@
         <a href="{{route('partnerUser')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Register</button></a>
         @endguest
         @auth()
-            <form action="" method="post">
-                <button type="submit">Logout</button>
+            <form action=" {{ route('logout') }}" method="post">
+                @csrf
+                <button class="bg-white text-black p-3 rounded" type="submit">Logout</button>
             </form>
         @endauth
         {{-- <a href="{{route('logout')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Logout</button></a> --}}

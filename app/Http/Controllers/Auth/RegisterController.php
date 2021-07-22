@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Employee;
+// use App\Models\Employee;
 use App\Models\User;
 
 class RegisterController extends Controller
@@ -32,19 +32,20 @@ class RegisterController extends Controller
             'username' => 'required|max:255'
         ]);
 
-        Employee::create([
+        User::create([
+            'type' => '1',
+            'username' => $request->username,
             'id_number' => Hash::make($request->id_number),
-            'first_name' => $request->name,
+            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        if (auth()->attempt($request->only('email', 'password'))){
+        if (auth()->attempt($request->only('username', 'password'))){
             return redirect()->route('services');
         }
         else{
-            dd("failed");
+            dd(auth()->attempt($request->only('username', 'password')));
         }
-
 
     }
 
@@ -57,6 +58,8 @@ class RegisterController extends Controller
         ]);
         // dd(Hash::make($request->id_number));
         User::create([
+            'type' => '0',
+            'name' => $request->name,
             // 'id_number' => Hash::make($request->id_number),
             'username' => $request->username,
             'email' => $request->email,
