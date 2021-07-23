@@ -29,8 +29,10 @@ class LoginController extends Controller
         if (!auth()->attempt($request->only('username', 'password'), $request->remember)) {
             return back()->with('status', 'Invalid login details');
         }
-
-        return redirect()->route('services');
+        if(auth()->user()->type == 0){
+            return redirect()->route('services');
+        }
+        return redirect()->route('dashboard');
     }
 
     public function partnerLogin()

@@ -29,7 +29,7 @@ Route::get('/register', [RegisterController::class, 'index']) ->name('register')
 Route::post('/register', [RegisterController::class, 'userStore']);
 
 Route::get('/partner', [RegisterController::class, 'partner']) ->name('partner');
-Route::post('/partner', [RegisterController::class, 'employeeStore']);
+Route::post('/partner', [RegisterController::class, 'partnerStore']);
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services')->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index']) ->name('dashboard')->middleware('auth');

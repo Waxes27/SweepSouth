@@ -20,7 +20,7 @@ class RegisterController extends Controller
         return view('auth.partner');
     }
 
-    public function employeeStore(Request $request)
+    public function partnerStore(Request $request)
     {
         // dd($request);
         $this->validate($request, [
@@ -40,12 +40,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
         if (auth()->attempt($request->only('username', 'password'))){
-            return redirect()->route('services');
+            return redirect()->route('dashboard');
         }
-        else{
-            dd(auth()->attempt($request->only('username', 'password')));
-        }
-
     }
 
     public function userStore(Request $request)
@@ -64,7 +60,10 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        dd('Register Attempt');
+        if(auth()->attempt($request->only('username','password'))){
+            return redirect()->route('services');
+        }
+        dd('Error');
 
     }
 }
