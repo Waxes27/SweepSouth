@@ -9,7 +9,11 @@ class ServicesController extends Controller
 {
     public function index()
     {
-        return view('services.services');
+        $services = Service::get();
+
+        return view('services.services', [
+            'services' => $services
+        ]);
     }
 
     public function create()
