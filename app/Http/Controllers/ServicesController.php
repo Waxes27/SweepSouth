@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -18,6 +19,19 @@ class ServicesController extends Controller
 
     public function create_service(Request $request)
     {
-        dd($request);
+        // dd($request);
+        $this->validate($request, [
+            'type' => 'required|max:255',
+            'description' => 'required|max:255',
+            'price' => 'required|integer'
+        ]);
+
+        Service::create([
+            'type' => $request->kind,
+            'description' => $request->description,
+            'price' => $request->price,
+        ]);
+
+
     }
 }
