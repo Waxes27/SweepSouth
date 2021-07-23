@@ -15,4 +15,9 @@ class ServicesController extends Controller
     {
         return view('services.create');
     }
+
+    public function create_service(Request $request)
+    {
+        dd($request);
+    }
 }

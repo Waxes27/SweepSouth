@@ -33,6 +33,8 @@ Route::post('/partner', [RegisterController::class, 'partnerStore']);
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services')->middleware('auth');
 Route::get('/services/create', [ServicesController::class, 'create'])->name('create_service')->middleware('auth');
+Route::post('/services/create', [ServicesController::class, 'create_service']);
+
 
 Route::get('/dashboard', [DashboardController::class, 'index']) ->name('dashboard')->middleware('auth');
 
