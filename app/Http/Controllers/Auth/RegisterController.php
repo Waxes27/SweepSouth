@@ -61,7 +61,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
         if(auth()->attempt($request->only('username','password'))){
-            return redirect()->route('services.services');
+            return redirect()->route('service');
         }
         dd('Error');
 

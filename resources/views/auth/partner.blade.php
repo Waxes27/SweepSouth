@@ -15,14 +15,14 @@
         @error('name')
             <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="kind">{{$message}}</label>
         @enderror
-        <input class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Name" name="name">
+        <input value="{{ old('name') }}" class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Name" name="name">
       </div>
 
       <div class="mb-4">
         @error('id_number')
             <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="kind">{{$message}}</label>
         @enderror
-        <input class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="id_number" type="text" placeholder="Identification number" name="id_number">
+        <input value="{{ old('id_number') }}" class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="id_number" type="text" placeholder="Identification number" name="id_number">
       </div>
 
 
@@ -30,7 +30,7 @@
         @error('email')
             <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="kind">{{$message}}</label>
         @enderror
-            <input class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="email">
+            <input value="{{ old('email') }}" class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="email">
         </div>
 
 
@@ -38,7 +38,7 @@
         @error('username')
             <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="kind">{{$message}}</label>
         @enderror
-        <input class="focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" name="username">
+        <input value="{{ old('username') }}" class="focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" name="username">
       </div>
 
 
