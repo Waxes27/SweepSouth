@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\BridgeController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']) ->name('home');
 
-Route::get('/login', [LoginController::class, 'index']) -> name('login');
+Route::get('/login', [LoginController::class, 'index']) -> name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'userLogin']);
 Route::post('/logout', [LoginController::class, 'logout']) ->name('logout');
 
@@ -30,6 +31,7 @@ Route::post('/register', [RegisterController::class, 'userStore']);
 Route::get('/partner', [RegisterController::class, 'partner']) ->name('partner');
 Route::post('/partner', [RegisterController::class, 'employeeStore']);
 
-Route::get('/services', [ServicesController::class, 'index'])->name('services');
+Route::get('/services', [ServicesController::class, 'index'])->name('services')->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index']) ->name('dashboard')->middleware('auth');
 
 Route::get('/registerbridge', [BridgeController::class, 'partnerUser']) ->name('partnerUser');
