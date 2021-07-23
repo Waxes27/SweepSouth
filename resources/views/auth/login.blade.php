@@ -21,8 +21,8 @@
         <input class="focus:text-blue-400 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" name="password">
       </div>
       <button type="submit" class="mb-6 bg-blue-400 rounded hover:text-white p-3 w-full">
-          Login
-      </button>
+        Login
+    </button>
 
       <a class="text-blue-700 hover:underline" href="{{route('partnerUser')}}">No account yet? Register here</a>
 

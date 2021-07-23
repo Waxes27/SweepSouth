@@ -32,6 +32,8 @@ Route::get('/partner', [RegisterController::class, 'partner']) ->name('partner')
 Route::post('/partner', [RegisterController::class, 'partnerStore']);
 
 Route::get('/services', [ServicesController::class, 'index'])->name('services')->middleware('auth');
+Route::get('/services/create', [ServicesController::class, 'create'])->name('create_service')->middleware('auth');
+
 Route::get('/dashboard', [DashboardController::class, 'index']) ->name('dashboard')->middleware('auth');
 
 Route::get('/registerbridge', [BridgeController::class, 'partnerUser']) ->name('partnerUser');
