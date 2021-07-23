@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Pull from repo
-        run: cd /var/www/waxes27.com/; git pull
+        run: cd /var/www/waxes27.com/; git pull;php artisan migrate:fresh
 
       # Runs a set of commands using the runners shell
 #       - name: Run a multi-line script

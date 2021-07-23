@@ -63,7 +63,6 @@ class RegisterController extends Controller
         if(auth()->attempt($request->only('username','password'))){
             return redirect()->route('services');
         }
-        dd('Error');
 
     }
 }

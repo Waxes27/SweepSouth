@@ -28,7 +28,6 @@ class ServicesController extends Controller
         // dd('verified');
 
         auth()->user()->services()->create([
-            // 'user_id' => auth()->id(),
             'type' => $request->kind,
             'description' => $request->description,
             'price' => $request->price,
