@@ -13,11 +13,14 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('service', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('service_name');
-            $table->text('service_description');
+            // $table->string('user_id');
+            // $table->foreign('user_id')->references('id')->on('users')->constrained()->onDelete('cascade');
+            $table->string('type');
+            $table->integer('price')->unsigned();
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service');
+        Schema::dropIfExists('services');
     }
 }

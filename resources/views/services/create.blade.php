@@ -14,25 +14,34 @@
             @csrf
             <div>
                 <label class="block text-center underlined text-gray-700 text-sm font-bold mb-2" for="kind">Service Type</label>
+                @error('kind')
+                <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="kind">{{$message}}</label>
+                @enderror
                 <div>
-                    <input name="kind" class="@error('kind') text-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What kind of Service are you offering?">
+                    <input value="{{old('kind')}}" name="kind" class="@error('kind') text-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What kind of Service are you offering?">
                 </div>
             </div>
-            @error('kind')
-                {{$message}}
-            @enderror
 
             <div>
                 <label class="block text-center underlined text-gray-700 text-sm font-bold mb-2 mt-2" for="Service Description">Service Description</label>
+                @error('description')
+                <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="description">{{$message}}</label>
+                @enderror
+
                 <div>
-                    <input name="description" class="@error('description') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Describe the Service...">
+                    <input value="{{old('kind')}}" name="description" class="@error('description') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Describe the Service...">
                 </div>
             </div>
 
             <div>
                 <label class="block text-center underlined text-gray-700 text-sm font-bold mb-2 mt-2" for="Service Price">Service Pricing</label>
+                @error('price')
+
+                <label class="flex block text-center text-red-500 underlined text-sm font-bold" for="Service Price">{{$message}}</label>
+                @enderror
+
                 <div>
-                    <input name="price" class="@error('price') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What is the price of the Service?">
+                    <input value="{{old('kind')}}" name="price" class="@error('price') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What is the price of the Service?">
                 </div>
             </div>
 

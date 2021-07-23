@@ -21,16 +21,20 @@ class ServicesController extends Controller
     {
         // dd($request);
         $this->validate($request, [
-            'type' => 'required|max:255',
+            'kind' => 'required|max:255',
             'description' => 'required|max:255',
             'price' => 'required|integer'
         ]);
+        // dd('verified');
 
-        Service::create([
+        auth()->user()->services()->create([
+            // 'user_id' => auth()->id(),
             'type' => $request->kind,
             'description' => $request->description,
             'price' => $request->price,
         ]);
+
+        return redirect()->route('dashboard');
 
 
     }
