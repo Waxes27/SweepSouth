@@ -19,7 +19,21 @@ class LoginController extends Controller
         return redirect()->route('home');
     }
 
-    public function userLogin()
+    public function userLogin(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+
+        if (!auth()->attempt($request->only('username', 'password'), $request->remember)) {
+            return back()->with('status', 'Invalid login details');
+        }
+
+        return redirect()->route('services');
+    }
+
+    public function partnerLogin()
     {
         dd('login Attempt');
     }
