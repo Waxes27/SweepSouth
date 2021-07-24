@@ -32,7 +32,7 @@
 
 <div class="flex">
     @auth()
-        <nav id="menuBar" class="flex w-0 opacity-0 bg-black text-white h-screen">
+        <nav id="menuBar" class="flex w-0 opacity-0 bg-black text-white h-screen invisible">
             <ul class="transition ease-in-out duration-500 hover:bg-gray-400 w-full text-center">
                 <li class="py-2">
                     <a href=" {{route('services')}} "><button class="p-4 w-full transition ease-in-out duration-500 hover:bg-red-400" >Order In</button></a>

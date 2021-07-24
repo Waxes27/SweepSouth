@@ -5,11 +5,12 @@
 @endsection
 
 @section('content')
-<ul>
-    <li>Booking of appointment</li>
-    <li>View Services</li>
-
-    {{-- <li>Testimonials</li> --}}
-</ul>
+<body>
+    <div class="p-4 bg-red-500 w-full">
+        <div class="bg-green-500">
+            Welcome to ...
+        </div>
+    </div>
+</body>
 @endsection
 
