@@ -29,7 +29,7 @@
                 @enderror
 
                 <div>
-                    <input value="{{old('kind')}}" name="description" class="@error('description') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Describe the Service...">
+                    <input value="{{old('description')}}" name="description" class="@error('description') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Describe the Service...">
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
                 @enderror
 
                 <div>
-                    <input value="{{old('kind')}}" name="price" class="@error('price') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What is the price of the Service?">
+                    <input value="{{old('price')}}" name="price" class="@error('price') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What is the price of the Service?">
                 </div>
             </div>
 
