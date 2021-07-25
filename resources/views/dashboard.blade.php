@@ -17,7 +17,7 @@
                 @foreach ($services as $service )
                     <div class=" border p-3 rounded">
                         <div class="text-center w-full">
-                            <h1 class=" bg-blue-300 rounded">Type</h1>
+                            <h1 class=" bg-blue-300 rounded">Service type</h1>
                             <div class="mb-6 bg-white rounded">
                                 {{ $service->type }}
                             </div>
@@ -31,6 +31,10 @@
                             <div class="mb-6 bg-white rounded">
                                 R{{$service->price}}
                             </div>
+
+                            <button class="w-full">
+
+                            </button>
                         </div>
                     </div>
                 @endforeach
