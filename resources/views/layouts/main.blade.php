@@ -9,10 +9,14 @@
     <title>@yield('title')</title>
 </head>
 <div class="p-8 bg-black flex justify-between">
+    <button onclick="services('services')" class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">
+        Click here for Services
+    </button>
     @auth
     <div>
         <button onclick="menu('menuBar')" class="p-2  bg-gray-100 hover:bg-gray-200 rounded-md">Menu</button>
     </div>
+
     @endauth
     <div>
         @guest()
