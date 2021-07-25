@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<body onload="loading_page('intro')">
+{{-- <body onload="loading_page('intro')">
     <div class="w-full">
         <div id="services" class="flex justify-between bg-gray-400 p-4 text-center h-0 opacity-0 invisible">
 
@@ -21,6 +21,6 @@
 
         </div>
     </div>
-</body>
+</body> --}}
 @endsection
 

@@ -4,12 +4,16 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Service;
 
 class LoginController extends Controller
 {
     public function index()
     {
-        return view('auth.login');
+        $services = Service::get();
+        return view('auth.login', [
+            'services' => $services
+        ]);
     }
 
 
