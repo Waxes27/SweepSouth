@@ -6,13 +6,18 @@ module.exports = {
 
      './resources/**/*.vue',
 
-   ],  
+   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+        zIndex: {
+            '1000': '1000',
+           }
+    },
   },
   plugins: [],
 }
+

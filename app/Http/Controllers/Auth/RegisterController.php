@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        
+
         $services = Service::get();
         return view('auth.register', [
             'services' => $services
@@ -22,7 +22,10 @@ class RegisterController extends Controller
 
     public function partner()
     {
-        return view('auth.partner');
+        $services = Service::get();
+        return view('auth.partner', [
+            'services' => $services
+        ]);
     }
 
     public function partnerStore(Request $request)
