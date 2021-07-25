@@ -63,7 +63,7 @@
 
             @if ($services->count())
                 @foreach ($services as $service )
-                {{$services->count()}}
+                {{-- {{$services->count()}} --}}
                 <button onmouseover="" class="p-5 bg-white rounded">
                         {{$service->type}}
                 </button>

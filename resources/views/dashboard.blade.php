@@ -22,7 +22,7 @@
                                 {{ $service->type }}
                             </div>
 
-                            <h1 class=" bg-blue-300 rounded">description</h1>
+                            <h1 class=" bg-blue-300 rounded">Description</h1>
                             <div class="mb-6 bg-white rounded">
                                 {{$service->description}}
                             </div>
