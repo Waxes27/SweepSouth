@@ -10,7 +10,7 @@
         <h1 class="text-center text-3xl p-4 text-blue-400 mb-5">
             Create A New Service
         </h1>
-        <form class="container justify-center w-full" action="" method="post">
+        <form class="container justify-center w-1/2 mx-auto" action="" method="post">
             @csrf
             <div>
                 <label class="block text-center underlined text-gray-700 text-sm font-bold mb-2" for="kind">Service Type</label>
