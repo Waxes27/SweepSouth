@@ -6,6 +6,7 @@
 
 @section('content')
 <body>
+    {{-- for users --}}
     <div class="p-4 bg-red-500 w-full">
         @if ($services->count())
             @foreach ($services as $service )

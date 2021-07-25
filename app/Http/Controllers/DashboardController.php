@@ -10,7 +10,8 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $services = Service::get();
+        $services = Service::where('user_id',auth()->user()->id)->get();
+
         return view('dashboard', [
             'services' => $services
         ]);
