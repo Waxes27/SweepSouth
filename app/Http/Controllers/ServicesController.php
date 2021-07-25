@@ -18,7 +18,10 @@ class ServicesController extends Controller
 
     public function create()
     {
-        return view('services.create');
+        $services = Service::get();
+        return view('services.create', [
+            'services' => $services
+        ]);
     }
 
     public function create_service(Request $request)
