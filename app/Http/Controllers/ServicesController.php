@@ -10,11 +10,20 @@ class ServicesController extends Controller
 {
     public function index()
     {
-        $services = Service::get();
+        // dd(auth()->user());
+        if (auth()->user()->type === '0'){
+            $services = Service::get();
 
-        return view('services.services', [
-            'services' => $services
-        ]);
+            return view('services.services', [
+                'services' => $services
+            ]);
+        }
+        elseif(auth()->user()->type === '1'){
+            $services = Service::where('user_id',auth()->user()->id)->get();
+            return redirect()->route('dashboard', [
+                'services' => $services
+            ]);
+        }
     }
 
     public function create()
@@ -30,13 +39,13 @@ class ServicesController extends Controller
 
     public function create_service(Request $request)
     {
-        // dd($request);
+
         $this->validate($request, [
             'kind' => 'required|max:255',
             'description' => 'required|max:255',
             'price' => 'required|integer'
         ]);
-        // dd('verified');
+
 
         auth()->user()->services()->create([
             'type' => $request->kind,
