@@ -16,8 +16,6 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            // $table->string('user_id');
-            // $table->foreign('user_id')->references('id')->on('users')->constrained()->onDelete('cascade');
             $table->string('type');
             $table->integer('price')->unsigned();
             $table->text('description');
