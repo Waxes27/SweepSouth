@@ -64,15 +64,25 @@
             @if ($services->count())
                 @foreach ($services as $service )
                 {{-- {{$services->count()}} --}}
-                <button onmouseover="" class="p-5 bg-white rounded">
+                <button onclick="" class="p-5 bg-white rounded">
                         {{$service->type}}
                 </button>
                 @endforeach
                 @else
+                <h1 class="flex justify-center">
                     There are no services
+                </h1>
+
             @endif
 
         </div>
+        {{-- <div class="text-center p-4 bg-red-500 w-1/3 mx-auto">
+            <div>Offered By</div>
+            <div>type</div>
+            <div>Description</div>
+            <div>Price</div>
+
+        </div> --}}
 
         <body>
             @yield('content')

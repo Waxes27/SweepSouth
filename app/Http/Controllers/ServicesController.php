@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\ServiceType;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -19,8 +20,11 @@ class ServicesController extends Controller
     public function create()
     {
         $services = Service::get();
+        $serviceTypes = ServiceType::get();
+
         return view('services.create', [
-            'services' => $services
+            'services' => $services,
+            'types' => $serviceTypes,
         ]);
     }
 
@@ -44,4 +48,15 @@ class ServicesController extends Controller
 
 
     }
+
+    public function create_service_type()
+    {
+        $serviceTypes = array('Hair', 'Nails', 'Feet', 'Skin');
+        foreach ($serviceTypes as $type){
+            ServiceType::create([
+                'type' => $type
+            ]);
+        }
+    }
 }
+

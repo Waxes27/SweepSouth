@@ -36,6 +36,11 @@ Route::get('/services/create', [ServicesController::class, 'create'])->name('cre
 Route::post('/services/create', [ServicesController::class, 'create_service']);
 
 
+
 Route::get('/dashboard', [DashboardController::class, 'index']) ->name('dashboard')->middleware('auth');
 
 Route::get('/registerbridge', [BridgeController::class, 'partnerUser']) ->name('partnerUser');
+
+#SCRIPTS HERE
+Route::get('/services/type/create', [ServicesController::class, 'create_service_type'])->name('create_service_type')->middleware('auth');
+

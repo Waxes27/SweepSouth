@@ -18,7 +18,11 @@
                 <label class=" flex block text-center text-red-500 underlined text-sm font-bold" for="kind">{{$message}}</label>
                 @enderror
                 <div>
-                    <input value="{{old('kind')}}" name="kind" class="@error('kind') text-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What kind of Service are you offering?">
+                    <select class="w-full rounded-lg p-3 hover:text-white bg-blue-400 mb-5 text-center" name="kind">
+                        @foreach ($types as $type )
+                            <option value="{{ $type->type }}"> {{ $type->type }} </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
@@ -41,7 +45,7 @@
                 @enderror
 
                 <div>
-                    <input value="{{old('price')}}" name="price" class="@error('price') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What is the price of the Service?">
+                    <input value="{{old('price')}}" name="price" class="@error('price') border-red-500 @enderror focus:text-blue-400 focus:border focus:border-blue-300 p-4 w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="What is the price of the Service? (R20)">
                 </div>
             </div>
 
