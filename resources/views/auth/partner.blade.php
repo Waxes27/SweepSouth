@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+Need to move this to profile
 <div class="mx-auto my-auto w-full max-w-xs">
     <h1 class="text-center text-3xl p-4 text-blue-400">
         Time to Partner
@@ -59,6 +60,7 @@
       <button type="submit" class="mb-6 bg-blue-400 rounded hover:text-white p-3 w-full">
           Partner
       </button>
+    </form>
 </div>
 
 @endsection

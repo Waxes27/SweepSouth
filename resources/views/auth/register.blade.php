@@ -5,7 +5,10 @@
 @endsection
 
 @section('content')
-<div class="mx-auto my-auto w-full max-w-xs">
+Need to move this to profile
+<section>
+</section>
+<div class="mx-auto w-full max-w-xs">
     <h1 class="text-center text-3xl p-4 text-blue-400">
         Time to Register
     </h1>

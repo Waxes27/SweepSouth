@@ -8,29 +8,29 @@
 
     <title>@yield('title')</title>
 </head>
-<div class="p-8 bg-black flex justify-between">
+<div class="sticky bg-opacity-75 top-0 w-full p-8 bg-black flex justify-between">
     {{-- @auth --}}
     <div>
         <button onclick="menu('menuBar')" class="p-2  bg-gray-100 hover:bg-gray-200 rounded-md">Menu</button>
     </div>
     <button onclick="services('services')" class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">
-        Click here for Services
+        Services
     </button>
 
     {{-- @endauth --}}
     <div>
         @guest()
         <a href="{{route('login')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Login</button></a>
-        <a href="{{route('partnerUser')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Register</button></a>
+        {{-- <a href="{{route('partnerUser')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Register</button></a> --}}
         @endguest
         @auth()
-            <form action=" {{ route('logout') }}" method="post">
-                @csrf
-                <button class="bg-white text-black p-3 rounded" type="submit">Logout</button>
-            </form>
+            <div class="flex justify-between space-x-3">
+                <div>
+                    <button onclick="account('account')" class="p-2  bg-gray-100 hover:bg-gray-200 rounded-md">Account</button>
+                </div>
+            </div>
         @endauth
-        {{-- <a href="{{route('logout')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Logout</button></a> --}}
-        {{-- <a href="{{route('refer')}}"><button class="p-2 transition-colors duration-500 ease-in-out text-white hover:text-black hover:bg-gray-200 rounded-md">Your Refferal Code</button></a> --}}
+
     </div>
 </div>
 
@@ -59,11 +59,10 @@
 
     @endguest
     <div class="w-full">
-        <div id="services" class="flex justify-between bg-gray-400 p-4 text-center h-0 opacity-0 invisible">
-
+        <div id="services" class="flex justify-between bg-gray-400 text-center h-0 opacity-0 invisible">
             @if ($services->count())
                 @foreach ($services as $service )
-                {{-- {{$services->count()}} --}}
+
                 <button onclick="" class="p-5 bg-white rounded">
                         {{$service->type}}
                 </button>
@@ -72,10 +71,29 @@
                 <h1 class="flex justify-center">
                     There are no services
                 </h1>
-
             @endif
 
         </div>
+    {{-- </div> --}}
+
+
+        <div id="account" class="flex justify-end h-0 opacity-0 invisible absolute">
+            <div class="space-y-4">
+                <div>
+                    <a href="{{ route('profile') }}"><button class="bg-black text-white p-3 w-full rounded">profile</button></a>
+                </div>
+                <div>
+                    <a href="{{route('logout')}}"><button class="bg-black text-white p-3 w-full rounded">Refer</button></a>
+                </div>
+                <form action=" {{ route('logout') }}" method="post">
+                    @csrf
+                    <button class="bg-black text-white p-3 w-full rounded" type="submit">Logout</button>
+                </form>
+            </div>
+
+        </div>
+
+
         {{-- <div class="text-center p-4 bg-red-500 w-1/3 mx-auto">
             <div>Offered By</div>
             <div>type</div>
@@ -87,6 +105,7 @@
         <body>
             @yield('content')
         </body>
+
     </div>
 </div>
 
