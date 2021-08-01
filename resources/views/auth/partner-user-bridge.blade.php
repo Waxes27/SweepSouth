@@ -8,7 +8,10 @@
 <div class="w-full h-full flex z-1000">
     <div class="bg-blue-300 w-1/3">
         <a  href="{{ route('partner') }}">
-            <button class="text-white text-3xl hover:bg-blue-500 hover:text-5xl w-full h-full">Partner</button>
+            <button class="text-white text-3xl hover:bg-blue-500 hover:text-5xl w-full h-full">
+                Partner
+                <p>(For Service Providers)</p>
+            </button>
         </a>
     </div>
     <div class="w-1/3">
@@ -16,7 +19,10 @@
     </div>
     <div class="bg-blue-300 w-1/3">
         <a href="{{ route('register') }}">
-            <button class="text-white text-3xl hover:bg-blue-500 w-full h-full">Client</button>
+            <button class="text-white text-3xl hover:bg-blue-500 w-full h-full">
+                Client
+                <p>(Well... For Clients)</p>
+            </button>
         </a>
     </div>
 </div>

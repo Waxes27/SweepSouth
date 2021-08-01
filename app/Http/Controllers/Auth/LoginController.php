@@ -31,7 +31,7 @@ class LoginController extends Controller
         ]);
 
         if (!auth()->attempt($request->only('username', 'password'), $request->remember)) {
-            return redirect()->route('register');
+            return redirect()->route('partnerUser');
             // return back()->with('status', 'Invalid login credentials');
         }
         if(auth()->user()->type == 0){

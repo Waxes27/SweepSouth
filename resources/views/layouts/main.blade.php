@@ -101,7 +101,7 @@
             <div>Price</div>
 
         </div> --}}
-
+        
         <body>
             @yield('content')
         </body>

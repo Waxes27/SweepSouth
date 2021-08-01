@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="mx-auto my-auto w-full max-w-xs">
+<div class="m-auto mt-36 w-full max-w-xs">
     <h1 class="text-center text-3xl p-4 text-blue-400">
         Time to Login
     </h1>
