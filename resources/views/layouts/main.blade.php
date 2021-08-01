@@ -80,7 +80,7 @@
         <div id="account" class="flex justify-end h-0 opacity-0 invisible absolute">
             <div class="space-y-4">
                 <div>
-                    {{-- <a href="{{ route('profile') }}"><button class="bg-black text-white p-3 w-full rounded">profile</button></a> --}}
+                    <a href="{{ route('profile') }}"><button class="bg-black text-white p-3 w-full rounded">profile</button></a>
                 </div>
                 <div>
                     <a href="{{route('logout')}}"><button class="bg-black text-white p-3 w-full rounded">Refer</button></a>
