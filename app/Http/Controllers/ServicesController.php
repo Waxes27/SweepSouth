@@ -12,7 +12,7 @@ class ServicesController extends Controller
     {
         // dd(auth()->user());
         if (auth()->user()->type === '0'){
-            $services = Service::get();
+            $services = Service::distinct()->get(['type']);
 
             return view('services.services', [
                 'services' => $services
@@ -28,7 +28,7 @@ class ServicesController extends Controller
 
     public function create()
     {
-        $services = Service::get();
+        $services = Service::distinct()->get(['type']);
         $serviceTypes = ServiceType::get();
 
         return view('services.create', [

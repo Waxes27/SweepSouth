@@ -13,7 +13,7 @@ class RegisterController extends Controller
     public function index()
     {
 
-        $services = Service::get();
+        $services = Service::distinct()->get(['type']);
         return view('auth.register', [
             'services' => $services
         ]);
@@ -22,7 +22,7 @@ class RegisterController extends Controller
 
     public function partner()
     {
-        $services = Service::get();
+        $services = Service::distinct()->get(['type']);
         return view('auth.partner', [
             'services' => $services
         ]);

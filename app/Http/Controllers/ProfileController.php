@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $services = Service::get();
+        $services = Service::distinct()->get(['type']);
         return view('profile.profile', [
             'services' => $services
         ]);

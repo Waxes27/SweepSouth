@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $services = Service::get();
+        $services = Service::distinct()->get(['type']);
         return view('home', [
             'services' => $services
         ]);

@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        $services = Service::get();
+        $services = Service::distinct()->get(['type']);
         return view('auth.login', [
             'services' => $services
         ]);
