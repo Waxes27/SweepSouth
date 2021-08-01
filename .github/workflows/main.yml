@@ -15,7 +15,7 @@ jobs:
 
   pull:
 
-    runs-on: backup, main
+    runs-on: self-hosted
 
 
     steps:
