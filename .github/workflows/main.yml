@@ -21,5 +21,8 @@ jobs:
     steps:
 
       - name: Pull from repo
-        run: cd /var/www/waxes27.com/; git pull;php artisan migrate:fresh
+        run: cd /var/www/waxes27.com/; git pull
+        
+      - name: migration
+        run: php artisan migrate:fresh
 
