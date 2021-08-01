@@ -15,11 +15,18 @@ jobs:
 
   pull:
 
-    runs-on: [self-hosted, backup]
+    runs-on: self-hosted
 
 
     steps:
 
       - name: Pull from repo
         run: cd /var/www/waxes27.com/; git pull
+        
+  migration:
+  
+    runs-on: self-hosted
+    steps:
+      - name: migrations
+        run: cd /var/www/waxes27.com/; php artisan migrate:fresh
 
