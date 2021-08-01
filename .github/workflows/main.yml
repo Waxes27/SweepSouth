@@ -21,7 +21,7 @@ jobs:
     steps:
 
       - name: Pull from repo
-        run: cd /var/www/waxes27.com/; git pull
+        run: cd /var/www/waxes27.com/; git stash; git pull
         
   migration:
   
